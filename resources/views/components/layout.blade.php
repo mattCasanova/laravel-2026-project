@@ -12,7 +12,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="mx-auto max-w-xl bg-gray-700 p-6">
+<body class="mx-auto max-w-xl bg-gray-700 p-6 text-white">
     <main>
         {{ $slot }}
     </main>
