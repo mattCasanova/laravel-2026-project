@@ -32,6 +32,10 @@ class IdeaController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'description' => 'required|string|min:10',
+        ]);
+
         $idea = Idea::create([
             'description' => $request->input('description'),
             'state' => 'pending',
@@ -55,6 +59,7 @@ class IdeaController extends Controller
      */
     public function edit(Idea $idea)
     {
+
         return view('ideas.edit', [
             'idea' => $idea,
         ]);
@@ -65,9 +70,11 @@ class IdeaController extends Controller
      */
     public function update(Request $request, Idea $idea)
     {
-        $idea->update([
-            'description' => request('description'),
+        $validated = $request->validate([
+            'description' => 'required|string|min:10',
         ]);
+
+        $idea->update($validated);
 
         return redirect("/ideas/{$idea->id}");
     }
