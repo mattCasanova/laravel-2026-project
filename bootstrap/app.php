@@ -11,7 +11,13 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
-        //
+        // Redirect guests to the login page, this is because we don't have a named route for login,
+        // so we can't use the route name here. If we had a named route for login, we could use that instead of hardcoding the URL.
+        $middleware->redirectGuestsTo('/login');
+
+        // We could also redirect authenticated users to a specific page, for example, ideas
+        // by deactivating the default Laravel behavior of redirecting authenticated users to /home after login, we can set it to /ideas instead.
+        $middleware->redirectUsersTo('/ideas');
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //

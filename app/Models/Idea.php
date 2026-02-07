@@ -9,5 +9,6 @@ class Idea extends Model
     protected $fillable = [
         'description',
         'state',
+        'user_id',
     ];
 }

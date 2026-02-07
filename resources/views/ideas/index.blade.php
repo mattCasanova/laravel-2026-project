@@ -9,6 +9,7 @@
             @endforeach
         </div>
     @else
-        <p class="text-white">No ideas found. <a href="/ideas/create" class="underline">Create one?</a></p>
+        <p>No ideas yet.</p>
     @endif
+    <p class="mt-6"><a href="/ideas/create" class="underline">Create a new one.</a></p>
 </x-layout>

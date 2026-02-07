@@ -1,6 +1,7 @@
 <div class="navbar bg-base-200">
     <div class="navbar-start">
         <div class="dropdown">
+            <!-- This is a dropdown for mobile screens, hidden on larger screens --->
             <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
                     stroke="currentColor">
@@ -12,16 +13,19 @@
                 <li><a href="/ideas/create">New Idea</a></li>
             </ul>
         </div>
-        <a class="btn btn-ghost text-xl">Idea</a>
+
+        <a href="/ideas" class="btn btn-ghost text-xl">Idea</a>
     </div>
+
     <div class="navbar-center hidden lg:flex">
         <ul class="menu menu-horizontal px-1">
             <li><a href="/ideas">Home</a></li>
             <li><a href="/ideas/create">New Idea</a></li>
         </ul>
     </div>
+
     <div class="navbar-end space-x-2">
-        {{--
+        {{-- Or do this for guests and authenticated users separately
         @guest
             <a href="/login" class="btn btn-primary">Login</a>
             <a href="/register" class="btn btn-primary">Register</a>
