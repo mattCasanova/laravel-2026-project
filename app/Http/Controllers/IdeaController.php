@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreIdeaRequest;
 use App\Models\Idea;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
 
 class IdeaController extends Controller
 {
@@ -36,6 +37,10 @@ class IdeaController extends Controller
      */
     public function create()
     {
+        /*
+         * one way to use gates in the controller method
+         * Gate::authorize('create', Idea::class);
+         */
         return view('ideas.create');
     }
 
@@ -44,6 +49,25 @@ class IdeaController extends Controller
      */
     public function show(Idea $idea)
     {
+        /*
+         * one was to use gates in the controller method
+         * Gate::authorize('view', $idea);
+         * or
+         * if (!Gate::allows('view', $idea)) {
+         *     abort(403);
+         * }
+         * */
+
+        /*
+         * another way to use gates is to use policies and the can method on the user model
+         * this will automatically call the view method on the IdeaPolicy class and pass in the user
+        if (Auth::user()->cannot('update', $idea)) {
+            dd('User cannot update this idea');
+        }
+        */
+
+        Gate::authorize('update', $idea);
+
         return view('ideas.show', [
             'idea' => $idea,
         ]);
@@ -54,7 +78,7 @@ class IdeaController extends Controller
      */
     public function edit(Idea $idea)
     {
-
+        Gate::authorize('update', $idea);
         return view('ideas.edit', [
             'idea' => $idea,
         ]);
@@ -65,6 +89,7 @@ class IdeaController extends Controller
      */
     public function update(StoreIdeaRequest $request, Idea $idea)
     {
+        Gate::authorize('update', $idea);
         $idea->update($request->validated());
 
         return redirect("/ideas/$idea->id");
@@ -75,6 +100,7 @@ class IdeaController extends Controller
      */
     public function destroy(Idea $idea)
     {
+        Gate::authorize('update', $idea);
         $idea->delete();
 
         return redirect('/ideas');

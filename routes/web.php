@@ -15,7 +15,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/ideas/create', [IdeaController::class, 'create']);
     Route::post('/ideas', [IdeaController::class, 'store']);
     Route::get('/ideas/{idea}', [IdeaController::class, 'show']);
-    Route::get('/ideas/{idea}/edit', [IdeaController::class, 'edit']);
+    Route::get('/ideas/{idea}/edit', [IdeaController::class, 'edit'])->can('update', 'idea');
     Route::patch('/ideas/{idea}', [IdeaController::class, 'update']);
     Route::delete('/ideas/{idea}', [IdeaController::class, 'destroy']);
 
@@ -34,6 +34,9 @@ Route::middleware('guest')->group(function () {
     Route::post('/login', [SessionController::class, 'store']);
 });
 
+
+
+/* This was just an example of how to use gates in the route definition, but you can also use them in controllers or blade templates
 Route::get('/admin', function () {
     // Alternate you can gate via controller method
     // Gate::authorize('view-admin');
@@ -44,3 +47,4 @@ Route::get('/admin', function () {
 
     return 'Placeholder for admin dashboard';
 })->can('view-admin');
+*/
