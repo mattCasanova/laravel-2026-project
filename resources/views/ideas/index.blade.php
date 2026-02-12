@@ -4,7 +4,7 @@
         <div class="mt-6 grid grid-cols-2 gap-x-6 gap-y-6">
             @foreach ($ideas as $idea)
                 <a href="/ideas/{{ $idea->id }}">
-                    <x-card :idea="$idea" />
+                             <x-card :idea="$idea" />
                 </a>
             @endforeach
         </div>

@@ -1,5 +1,5 @@
-# Created by https://www.toptal.com/developers/gitignore/api/macos,visualstudiocode,vue,laravel,angular,phpunit,intellij+all,c++,xcode,android,androidstudio,node,zsh
-# Edit at https://www.toptal.com/developers/gitignore?templates=macos,visualstudiocode,vue,laravel,angular,phpunit,intellij+all,c++,xcode,android,androidstudio,node,zsh
+# Created by https://www.toptal.com/developers/gitignore/api/c++,vue,zsh,node,macos,xcode,android,angular,laravel,phpunit,intellij+all,androidstudio,visualstudiocode,phpstorm+all,web
+# Edit at https://www.toptal.com/developers/gitignore?templates=c++,vue,zsh,node,macos,xcode,android,angular,laravel,phpunit,intellij+all,androidstudio,visualstudiocode,phpstorm+all,web
 
 ### Android ###
 # Gradle files
@@ -388,6 +388,61 @@ dist
 # SvelteKit build / generate output
 .svelte-kit
 
+### PhpStorm+all ###
+# Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio, WebStorm and Rider
+# Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
+
+# User-specific stuff
+
+# AWS User-specific
+
+# Generated files
+
+# Sensitive or high-churn files
+
+# Gradle
+
+# Gradle and Maven with auto-import
+# When using Gradle or Maven with auto-import, you should exclude module files,
+# since they will be recreated, and may cause churn.  Uncomment if using
+# auto-import.
+# .idea/artifacts
+# .idea/compiler.xml
+# .idea/jarRepositories.xml
+# .idea/modules.xml
+# .idea/*.iml
+# .idea/modules
+# *.iml
+# *.ipr
+
+# CMake
+
+# Mongo Explorer plugin
+
+# File-based project format
+
+# IntelliJ
+
+# mpeltonen/sbt-idea plugin
+
+# JIRA plugin
+
+# Cursive Clojure plugin
+
+# SonarLint plugin
+
+# Crashlytics plugin (for Android Studio and IntelliJ)
+
+# Editor-based Rest Client
+
+# Android studio 3.1+ serialized cache file
+
+### PhpStorm+all Patch ###
+# Ignore everything but code style settings and run configurations
+# that are supposed to be shared within teams.
+
+
+
 ### PHPUnit ###
 # Covers PHPUnit
 # Reference: https://phpunit.de/
@@ -431,6 +486,21 @@ docs/_book
 
 # TODO: where does this rule come from?
 test/
+
+### Web ###
+*.asp
+*.cer
+*.csr
+*.css
+*.htm
+*.html
+*.js
+*.jsp
+*.php
+*.rss
+*.wasm
+*.wat
+*.xhtml
 
 ### Xcode ###
 ## User settings
@@ -599,4 +669,4 @@ hs_err_pid*
 
 !/gradle/wrapper/gradle-wrapper.jar
 
-# End of https://www.toptal.com/developers/gitignore/api/macos,visualstudiocode,vue,laravel,angular,phpunit,intellij+all,c++,xcode,android,androidstudio,node,zsh
+# End of https://www.toptal.com/developers/gitignore/api/c++,vue,zsh,node,macos,xcode,android,angular,laravel,phpunit,intellij+all,androidstudio,visualstudiocode,phpstorm+all,web

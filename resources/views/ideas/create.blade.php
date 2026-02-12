@@ -6,7 +6,7 @@
             <p class="mt-3 text-sm/6 text-gray-400">Have an idea you want to save for later?</p>
 
             <legend class="fieldset-legend">New Idea</legend>
-            <x-forms.textarea name="description" label="Description" />
+            <x-forms.textarea name="description" label="Description"/>
 
             <button class="btn btn-neutral mt-4">Create</button>
         </fieldset>

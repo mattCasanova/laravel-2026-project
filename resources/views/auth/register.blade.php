@@ -6,13 +6,13 @@
             <legend class="fieldset-legend">Register</legend>
 
             <label class="label">Name</label>
-            <input type="text" class="input" name="name" placeholder="Name" required />
+            <input type="text" class="input" name="name" placeholder="Name" required/>
 
             <label class="label">Email</label>
-            <input type="email" class="input" name="email" placeholder="Email" required />
+            <input type="email" class="input" name="email" placeholder="Email" required/>
 
             <label class="label">Password</label>
-            <input type="password" class="input" name="password" placeholder="Password" required />
+            <input type="password" class="input" name="password" placeholder="Password" required/>
 
             <button class="btn btn-neutral mt-4">Register</button>
         </fieldset>

@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return 'Placeholder for homepage';
-});
+})->name('home');
 
 // Idea Routes
 Route::middleware('auth')->group(function () {
@@ -22,7 +22,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/logout', [SessionController::class, 'destroy']);
 });
 
-// Alternative using resource route
+
+// Alternative using resource
 // Route::resource('ideas', IdeaController::class)->middleware('auth');
 
 Route::middleware('guest')->group(function () {
@@ -32,3 +33,14 @@ Route::middleware('guest')->group(function () {
     Route::get('/login', [SessionController::class, 'create']);
     Route::post('/login', [SessionController::class, 'store']);
 });
+
+Route::get('/admin', function () {
+    // Alternate you can gate via controller method
+    // Gate::authorize('view-admin');
+    // or
+    // if (!Gate::allows('view-admin')) {
+    //     abort(403);
+    // }
+
+    return 'Placeholder for admin dashboard';
+})->can('view-admin');

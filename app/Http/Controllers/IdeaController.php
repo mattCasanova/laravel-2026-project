@@ -19,25 +19,24 @@ class IdeaController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        return view('ideas.create');
-    }
-
-    /**
      * Store a newly created resource in storage.
      */
     public function store(StoreIdeaRequest $request)
     {
-
         Auth::user()->ideas()->create([
             'description' => $request->input('description'),
             'state' => 'pending',
         ]);
 
         return redirect('/ideas');
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function create()
+    {
+        return view('ideas.create');
     }
 
     /**
@@ -68,7 +67,7 @@ class IdeaController extends Controller
     {
         $idea->update($request->validated());
 
-        return redirect("/ideas/{$idea->id}");
+        return redirect("/ideas/$idea->id");
     }
 
     /**
