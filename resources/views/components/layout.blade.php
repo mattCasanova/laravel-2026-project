@@ -13,7 +13,7 @@
 
 </head>
 
-<body class="text-primary">
+<body class="">
 <x-nav/>
 <main class="mx-auto mt-6 max-w-3xl">
     {{ $slot }}
