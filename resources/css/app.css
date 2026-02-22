@@ -5,7 +5,20 @@
 @source '../**/*.blade.php';
 @source '../**/*.js';
 
+@plugin "daisyui" {
+    themes: night, synthwave, cyberpunk;
+}
+
+@plugin "daisyui/theme" {
+    name: mybrand;
+    default: true;
+    --color-primary: oklch(65% 0.2 260);   /* example purple */
+    --color-primary-content: white;
+    /* more vars: base-100, neutral, etc. — see daisyui.com/docs/colors */
+}
+
 @theme {
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+    'Segoe UI Symbol', 'Noto Color Emoji';
+
 }
